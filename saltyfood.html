@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>懶人料理王</title>
+    <!-- css文件載入 -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById('searchInput');
+        const foodCards = document.querySelectorAll('.food-card');
+
+        searchInput.addEventListener('input', function () {
+            const keyword = this.value.toLowerCase();
+            foodCards.forEach(card => {
+                const name = card.dataset.name.toLowerCase();
+                const desc = card.dataset.desc.toLowerCase();
+                card.style.display = (name.includes(keyword) || desc.includes(keyword)) ? 'block' : 'none';
+            });
+        });
+    });
+</script>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
+
+    <!-- 導覽列 -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+
+        <div class="container">
+            <a class="navbar-brand fw-bold text-danger" href="index.html">懶人料理王</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="search-bar ms-3" role="search">
+                <div class="input-group">
+                    <input id="searchInput" type="search" class="form-control" placeholder="搜尋美食" aria-label="搜尋美食">
+                    <button class="btn btn-outline-danger" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link " href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">關於我們</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">鹹食</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item " href="中式鹹食.html">中式鹹食</a></li>
+                            <li><a class="dropdown-item" href="西式鹹食.html">西式料理</a></li>
+                            <li><a class="dropdown-item" href="日式鹹食.html">日式鹹食</a></li>
+                            <li><a class="dropdown-item" href="韓式鹹食.html">韓式鹹食</a></li>
+                            <li><a class="dropdown-item active" href="saltyfood.html">所有鹹食</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            甜食
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="中式甜點.html">中式甜點</a></li>
+                            <li><a class="dropdown-item" href="西式甜點.html">西式甜點</a></li>
+                            <li><a class="dropdown-item" href="日式甜點.html">日式甜點</a></li>
+                            <li><a class="dropdown-item" href="dessert.html">所有甜點</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="sharefood.html">美食分享小天地</a></li>
+                    <li class="nav-item"><a class="nav-link" href="LoginRegister.html">登入/註冊</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Banner 區 -->
+    <section id="home" class="bg-dark text-white text-center d-flex align-items-center justify-content-center" style="height: 90vh; background: url('https://global-blog.cpcdn.com/tw/2023/05/AdobeStock_272976827.jpg') center center/cover no-repeat; position: relative; ">
+        <div class="overlay"></div>
+        <div class="z-1">
+            <h1 class="display-4 fw-bold">鹹食入門！料理其實很簡單！</h1>
+            <p class="lead">跟著簡單步驟，做出好吃又有成就感的料理！</p>
+        </div>
+    </section>
+
+
+ <!-- 主題食譜 -->
+    <section class="py-5 bg-light" id="lazy-cooking">
+        <div class="container">
+            <div class="row">
+                <!-- 左側分類 -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <span class="badge bg-warning text-dark fs-6">主題食譜 Recipes Categories</span>
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="py-1"><a href="懶人必備料理.html" class="text-decoration-none text-dark ps-2">懶人必備料理</a></li>
+                        <li class="py-1"><a href="免烤免炸料理.html" class="text-decoration-none text-dark ps-2">免烤免炸料理</a></li>
+                        <li class="py-1"><a href="新手輕鬆做.html" class="text-decoration-none text-dark ps-2">新手輕鬆做</a></li>
+                        <li class="py-1"><a href="便當與常備菜.html" class="text-decoration-none text-dark ps-2">便當與常備菜</a></li>
+                        <li class="py-1"><a href="開胃下飯料理.html" class="text-decoration-none text-dark ps-2">開胃下飯料理</a></li>
+                        <li class="py-1"><a href="蛋奶素可食.html" class="text-decoration-none text-dark ps-2">蛋奶素可食</a></li>
+                        <li class="py-1"><a href="進階挑戰區.html" class="text-decoration-none text-dark ps-2">進階挑戰區</a></li>
+                    </ul>
+                </div>
+                 <!-- 右側料理展示 -->
+                 <div class="col-md-9">
+                    <div class="row g-4">
+                        <!-- 卡片一 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="起司玉米蛋餅" data-desc="早餐蛋餅 簡單雞蛋料理 起司 玉米">
+                                <div class="position-relative">
+                                    <img src="images/起司玉米蛋餅.jpg" class="card-img-top" alt="起司玉米蛋餅">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/TSETUfVfMA4?si=B76lO5EXm3CY3FYZ" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">起司玉米蛋餅</h5>
+                                    <p class="card-text small text-muted">不用去早餐店！簡單步驟，讓你擁有自己的蛋餅！</p>
+                                    <a href="起司玉米蛋餅.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片二 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="韓式辣炒年糕" data-desc="辣炒年糕做法 韓式小吃 韓式甜辣醬料理">
+                                <div class="position-relative">
+                                    <img src="images/韓式辣炒年糕.jpg" class="card-img-top" alt="韓式辣炒年糕">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/zucT3Sj5sDI" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">韓式辣炒年糕</h5>
+                                    <p class="card-text small text-muted">年糕Q彈的口感和濃稠的醬汁讓人忍不住一口接一口！</p>
+                                    <a href="韓式辣炒年糕.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片三 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="親子丼" data-desc="雞肉 半熟蛋丼飯 日式雞肉蓋飯 ">
+                                <div class="position-relative">
+                                    <img src="images/親子丼.jpg" class="card-img-top" alt="親子丼">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/2veXmm4iWpo?si=-n4Zo_xXYvueijfS" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">親子丼</h5>
+                                    <p class="card-text small text-muted">半熟蛋香濃滑嫩，甘甜醬汁超開胃</p>
+                                    <a href="親子丼.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片四 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="味噌湯" data-desc="日式湯品 豆腐湯 味噌料理">
+                                <div class="position-relative">
+                                    <img src="images/味噌湯.jpg" class="card-img-top" alt="味噌湯">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/-4iTnKn9x78?si=_qTDiIYjDMkxUJdS" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">味噌湯</h5>
+                                    <p class="card-text small text-muted">暖呼呼的湯品，用味噌與豆腐帶出簡單又深沉的日式滋味。</p>
+                                    <a href="味噌湯.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片五 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="番茄肉醬義大利麵" data-desc="義式肉醬料理 義大利麵 番茄豬絞肉食譜">
+                                <div class="position-relative">
+                                    <img src="images/番茄肉醬義大利麵.jpg" class="card-img-top" alt="番茄肉醬義大利麵">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/_C2-Ux5ox8M?si=OiDVmjweJqsaVitQ" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">番茄肉醬義大利麵</h5>
+                                    <p class="card-text small text-muted">酸甜番茄與濃郁豬絞肉完美融合，香氣十足一口接一口！</p>
+                                    <a href="番茄肉醬義大利麵.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 卡片七 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="三杯雞" data-desc="零食 茶點 傳統點心  ">
+                                <div class="position-relative">
+                                    <img src="images/三杯雞.jpg" class="card-img-top" alt="三杯雞">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/Bds5P1LODgs?si=VxuJ-hK_EIhEJCZm" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">三杯雞</h5>
+                                    <p class="card-text small text-muted">經典台味料理，香氣四溢的醬油、麻油與九層塔，超下飯！</p>
+                                    <a href="三杯雞.html" class="btn btn-danger">點我查看食譜</a>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片八 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="泡菜煎餅" data-desc="韓式小點 酸辣泡菜料理 平底鍋煎餅">
+                                <div class="position-relative">
+                                    <img src="images/泡菜煎餅.jpg" class="card-img-top" alt="泡菜煎餅">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/Q9AVTbDHT8U?si=8Rdb2F3jeKVBTeG4" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">泡菜煎餅</h5>
+                                    <p class="card-text small text-muted">Q 外脆內嫩，微辣酸香的泡菜與麵糊融合，最受歡迎的韓式小點！</p>
+                                    <a href="泡菜煎餅.html" class="btn btn-danger">點我查看食譜</a>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片九 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="法式鹹派" data-desc="低熱量 早餐鹹食 派餡食譜 ">
+                                <div class="position-relative">
+                                    <img src="images/法式鹹派.jpg" class="card-img-top" alt="法式鹹派">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/6FpRoAEPdaI?si=xp_NNGVVRntZN-f9" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">法式鹹派</h5>
+                                    <p class="card-text small text-muted">低熱量法式鹹派，太好吃無罪惡感</p>
+                                    <a href="法式鹹派.html" class="btn btn-danger">點我查看食譜</a>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片十 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="日式炒烏龍麵" data-desc="烏龍麵 快速拌麵 和風炒麵">
+                                <div class="position-relative">
+                                    <img src="images/日式炒烏龍麵.jpg" class="card-img-top" alt="日式炒烏龍麵">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/CMCR-Fdfe-E?si=VeUpVSjSMj42Yra8" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">日式炒烏龍麵</h5>
+                                    <p class="card-text small text-muted">Q 彈烏龍麵搭配洋蔥、豬肉與日式醬油，香氣濃郁超涮嘴！</p>
+                                    <a href="日式炒烏龍麵.html" class="btn btn-danger">點我查看食譜</a>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片十一 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="紅燒獅子頭" data-desc="蛋塔 港式甜點 下午茶">
+                                <div class="position-relative">
+                                    <img src="images/紅燒獅子頭.jpg" class="card-img-top" alt="紅燒獅子頭">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/9vVpYTtd7Ys?si=VAFYvTZBB0d8JXAn" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">紅燒獅子頭</h5>
+                                    <p class="card-text small text-muted">外酥內嫩的大肉丸，搭配紅燒醬汁，傳統宴客料理首選！</p>
+                                    <a href="紅燒獅子頭.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片十二 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="紫菜包飯" data-desc="韓式壽司 飯捲做法 便當推薦">
+                                <div class="position-relative">
+                                    <img src="images/紫菜包飯.jpg" class="card-img-top" alt="紫菜包飯">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/aB1gSL3KmDo?si=b67ivcDRBxNj0CWj" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">紫菜包飯</h5>
+                                    <p class="card-text small text-muted">健康豐富的小巧壽司，搭配喜歡的內餡超自由，野餐或便當都適合！</p>
+                                    <a href="紫菜包飯.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片十三 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="焗烤馬鈴薯" data-desc="起司焗烤 派對小菜 馬鈴薯料理">
+                                <div class="position-relative">
+                                    <img src="images/焗烤馬鈴薯.jpg" class="card-img-top" alt="焗烤馬鈴薯">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/5j_eMizpLR8?si=oiOCO55-7_5pOqTz" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">焗烤馬鈴薯</h5>
+                                    <p class="card-text small text-muted">綿密馬鈴薯搭配香濃起司焗烤，邪惡又滿足的西式家常菜！</p>
+                                    <a href="焗烤馬鈴薯.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片十四 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="玉米濃湯" data-desc="濃湯食譜 早餐湯品 西式玉米湯">
+                                <div class="position-relative">
+                                    <img src="images/玉米濃湯.jpg" class="card-img-top" alt="玉米濃湯">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/fMQdHe1x4so?si=DNGVEfumE82QE3_1" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">玉米濃湯</h5>
+                                    <p class="card-text small text-muted">滑順濃郁、玉米香甜滿溢的暖心湯品，早餐或前菜都適合！</p>
+                                    <a href="玉米濃湯.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片十五 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="韓式炸雞" data-desc="韓式甜辣 炸雞醬汁 聚餐料理">
+                                <div class="position-relative">
+                                    <img src="images/韓式炸雞.jpg" class="card-img-top" alt="韓式炸雞">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/ht0QNOet3wU?si=M18q0mWGvfY2ITFW" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">韓式炸雞</h5>
+                                    <p class="card-text small text-muted">酥脆雞塊裹上甜辣醬汁，每口都酥脆多汁，聚餐神級選項！</p>
+                                    <a href="韓式炸雞.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片十六 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="海鮮燉飯" data-desc="燉飯 海味料理 西班牙">
+                                <div class="position-relative">
+                                    <img src="images/海鮮燉飯.jpg" class="card-img-top" alt="海鮮燉飯">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/LGE5tbr0ng8?si=VhfZ7NwV9qHRabfm" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">西班牙海鮮燉飯</h5>
+                                    <p class="card-text small text-muted">
+                                        吸收滿滿海味的米飯，每一口都像在地中海旅行！
+                                    </p>
+                                    <a href="海鮮燉飯.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 卡片十八 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="麻醬麵" data-desc="台式馬卡龍 輕巧 復古甜點">
+                                <div class="position-relative">
+                                    <img src="images/麻醬麵.jpg" class="card-img-top" alt="麻醬麵">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/h4g3pq6LCtQ?si=H9CGF6jrpXgs_L2d" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">麻醬麵</h5>
+                                    <p class="card-text small text-muted">
+                                        香濃芝麻醬完美裹住麵條，簡單快速、香氣撲鼻！
+                                    </p>
+                                    <a href="麻醬麵.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 卡片十九 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="照燒雞腿排" data-desc="甜鹹雞肉 照燒醬 日式雞腿排">
+                                <div class="position-relative">
+                                    <img src="images/照燒雞腿排.jpg" class="card-img-top" alt="照燒雞腿排">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/YS9Wer5Ythg?si=HMoCHehPqKneE0yh" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">照燒雞腿排</h5>
+                                    <p class="card-text small text-muted">甜鹹濃郁的照燒醬裹住雞腿肉，一口接一口停不下來！</p>
+                                    <a href="照燒雞腿排.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片二十 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="法式紅酒燉牛肉" data-desc="紅酒牛肉 慢燉食譜 歐風料理">
+                                <div class="position-relative">
+                                    <img src="images/法式紅酒燉牛肉.jpg" class="card-img-top" alt="法式紅酒燉牛肉">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/4lZB8qafY2Q?si=1DblAzzHQbEbeaY8" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">法式紅酒燉牛肉</h5>
+                                    <p class="card-text small text-muted">
+                                        紅酒慢燉出牛肉的柔嫩與香氣，層層風味令人回味無窮！
+                                    </p>
+                                    <a href="法式紅酒燉牛肉.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片二一 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="番茄炒蛋" data-desc="番茄 雞蛋 家常食材 快速料理">
+                                <div class="position-relative">
+                                    <img src="images/番茄炒蛋.jpg" class="card-img-top" alt="番茄炒蛋">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/LBdYczg1pqc?si=2etmBw8Jh65SBB2g" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">番茄炒蛋</h5>
+                                    <p class="card-text small text-muted">
+                                        酸甜爽口、營養滿分的家常菜代表，人人都愛的經典組合！
+                                    </p>
+                                    <a href="番茄炒蛋.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 卡片二二 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm food-card has-video" data-name="韓式嫩豆腐鍋" data-desc="泡菜鍋 韓式鍋物 嫩豆腐鍋辛奇">
+                                <div class="position-relative">
+                                    <img src="images/韓式嫩豆腐鍋.jpg" class="card-img-top" alt="韓式嫩豆腐鍋">
+                                    <span class="position-absolute top-50 start-50 translate-middle">
+                                        <a href="https://www.youtube.com/embed/tkbequqEZsI?si=XEk39CSKyR1Epxrc" target="_blank">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="播放影片" class="video-icon" width="30" height="30">
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">韓式嫩豆腐鍋</h5>
+                                    <p class="card-text small text-muted">豆腐、豬肉交織出層次濃厚的湯頭，辣香開胃！</p>
+                                    <a href="韓式嫩豆腐鍋.html" class="btn btn-danger">點我查看食譜</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+     <!-- 頁腳 -->
+     <footer class="footer text-center text-white py-4" style="background-color: #A83B3B;">
+        <div class="container">
+            <p class="mb-1 fw-bold">© 2025 懶人料理王</p>
+            <p class="mb-0 small">
+                一起用最簡單的方式，做出滋味。
+                <a href="#top" class="text-white text-decoration-underline ms-2">回到上方</a>
+            </p>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById('searchInput');
+            const foodCards = document.querySelectorAll('.food-card');
+
+            searchInput.addEventListener('input', function () {
+                const keyword = this.value.toLowerCase();
+                foodCards.forEach(card => {
+                    const name = card.dataset.name.toLowerCase();
+                    const desc = card.dataset.desc.toLowerCase();
+                    card.style.display = (name.includes(keyword) || desc.includes(keyword)) ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>懶人料理王</title>
+
+    <!-- CSS 載入 -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
+
+    <!-- 導覽列 -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+
+        <div class="container">
+            <a class="navbar-brand fw-bold text-danger" href="index.html">懶人料理王</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="search-bar ms-3" role="search">
+                <div class="input-group">
+                    <input id="searchInput" type="search" class="form-control" placeholder="搜尋美食" aria-label="搜尋美食">
+                    <button class="btn btn-outline-danger" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">關於我們</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="saltyfood.html" role="button" data-bs-toggle="dropdown">鹹食</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="中式鹹食.html">中式鹹食</a></li>
+                            <li><a class="dropdown-item" href="西式鹹食.html">西式料理</a></li>
+                            <li><a class="dropdown-item" href="日式鹹食.html">日式鹹食</a></li>
+                            <li><a class="dropdown-item" href="韓式鹹食.html">韓式鹹食</a></li>
+                            <li><a class="dropdown-item" href="saltyfood.html">所有鹹食</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="dessert.html" role="button" data-bs-toggle="dropdown">
+                            甜食
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="中式甜點.html">中式甜點</a></li>
+                            <li><a class="dropdown-item" href="西式甜點.html">西式甜點</a></li>
+                            <li><a class="dropdown-item" href="日式甜點.html">日式甜點</a></li>
+                            <li><a class="dropdown-item" href="dessert.html">所有甜點</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="sharefood.html">美食分享小天地</a></li>
+                    <li class="nav-item"><a class="nav-link" href="LoginRegister.html">登入/註冊</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 登入與註冊 -->
+    <section class="page-content" id="LoginRegister" style="margin-top: 120px;">
+        <div class="container py-5">
+            <div class="row justify-content-center gap-4">
+
+                <!-- 登入 -->
+                <div class="col-md-5 mb-4">
+                    <div class="card shadow rounded-4">
+                        <div class="card-body p-4">
+                            <h3 class="text-center text-danger mb-4">登入</h3>
+                            <form onsubmit="event.preventDefault();">
+                                <div class="mb-3">
+                                    <label for="Email" class="form-label">帳號或 Email<span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                                        <input type="text" class="form-control" id="Email" placeholder="請輸入帳號或 Email" required />
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Password" class="form-label">密碼<span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                        <input type="password" class="form-control" id="Password" placeholder="請輸入密碼" required />
+                                    </div>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="rememberMe" />
+                                    <label class="form-check-label" for="rememberMe">記住我</label>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-danger">登入</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 註冊 -->
+                <div class="col-md-5 mb-4">
+                    <div class="card shadow rounded-4">
+                        <div class="card-body p-4">
+                            <h3 class="text-center text-danger mb-4">註冊</h3>
+                            <form onsubmit="event.preventDefault();">
+                                <div class="mb-3">
+                                    <label for="RegisteredAccount" class="form-label">帳號<span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                                        <input type="text" class="form-control" id="RegisteredAccount" placeholder="請輸入帳號" required />
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="RegisteredEmail" class="form-label">電子信箱<span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                                        <input type="email" class="form-control" id="RegisteredEmail" placeholder="請輸入電子信箱" required />
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="RegisteredPassword" class="form-label">密碼<span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                        <input type="password" class="form-control" id="RegisteredPassword" placeholder="請輸入密碼" required />
+                                    </div>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-danger">註冊</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer class="footer text-center text-white py-4" style="background-color: #A83B3B;">
+        <div class="container">
+            <p class="mb-1 fw-bold">© 2025 懶人料理王</p>
+            <p class="mb-0 small">
+                一起用最簡單的方式，做出滋味。
+                <a href="#top" class="text-white text-decoration-underline ms-2">回到上方</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript 放頁尾 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById('searchInput');
+            const foodCards = document.querySelectorAll('.food-card');
+
+            searchInput.addEventListener('input', function () {
+                const keyword = this.value.toLowerCase();
+                foodCards.forEach(card => {
+                    const name = card.dataset.name?.toLowerCase() || '';
+                    const desc = card.dataset.desc?.toLowerCase() || '';
+                    card.style.display = (name.includes(keyword) || desc.includes(keyword)) ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
